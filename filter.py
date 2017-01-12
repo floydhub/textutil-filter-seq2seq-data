@@ -70,11 +70,6 @@ def main():
         default='False', help='File has header row?')
     parser.add_argument('-o', '--output', required=True, help='Path to output file')
 
-    # Text preprocess args
-    parser.add_argument(
-        '--fix_unicode', required=False, type=str2bool,
-        default='False', help='if True, fix “broken” unicode such as mojibake and garbled HTML entities')
-    
     args = parser.parse_args()
     # Unescape the delimiter
     args.delimiter = codecs.decode(args.delimiter, "unicode_escape")
